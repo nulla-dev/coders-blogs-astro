@@ -1,18 +1,67 @@
 ---
 import { getCollection } from "astro:content";
+import IndexLayout from "../../layouts/IndexLayout.astro";
 const posts = await getCollection("blog");
 ---
 
-<html>
-    <body>
-        <h1>Blog</h1>
-        {
-            posts.map((post:any) => (
-                <a href={`blog/`+post.slug}>
-                    <h2>{post.data.title}</h2>
-                    <p>{post.data.date}</p>
-                </a>
-            ))
-        }
-    </body>
-</html>
+<IndexLayout>
+    {
+        posts.map((post: any) => (
+            <div class="container px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-900 dark:bg-gray-50 bg-gray-900 dark:bg-gray-50">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-400 dark:text-gray-600 text-gray-400 dark:text-gray-600">
+                        {post.data.date}
+                    </span>
+                    <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        class="px-2 py-1 font-bold rounded bg-violet-400 dark:bg-violet-600 bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50 text-gray-900 dark:text-gray-50"
+                    >
+                        Javascript
+                    </a>
+                </div>
+                <div class="mt-3">
+                    <a
+                        rel="noopener noreferrer"
+                        href={`blog/` + post.slug}
+                        class="text-2xl font-bold hover:underline"
+                    >
+                        {post.data.title}
+                    </a>
+                    <p class="mt-2">
+                        Tamquam ita veritas res equidem. Ea in ad expertus
+                        paulatim poterunt. Imo volo aspi novi tur. Ferre hic
+                        neque vulgo hae athei spero. Tantumdem naturales
+                        excaecant notaverim etc cau perfacile occurrere. Loco
+                        visa to du huic at in dixi aër.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <a
+                        rel="noopener noreferrer"
+                        href={`blog/` + post.slug}
+                        class="hover:underline text-violet-400 dark:text-violet-600 text-violet-400 dark:text-violet-600"
+                    >
+                        Read more
+                    </a>
+                    <div>
+                        <a
+                            rel="noopener noreferrer"
+                            href="#"
+                            class="flex items-center"
+                        >
+                            <img
+                                src="https://source.unsplash.com/50x50/?portrait"
+                                alt="avatar"
+                                class="object-cover w-10 h-10 mx-4 rounded-full bg-gray-500 dark:bg-gray-500 bg-gray-500 dark:bg-gray-500"
+                            />
+                            <span class="hover:underline text-gray-400 dark:text-gray-600 text-gray-400 dark:text-gray-600">
+                                Leroy Jenkins
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</IndexLayout>
