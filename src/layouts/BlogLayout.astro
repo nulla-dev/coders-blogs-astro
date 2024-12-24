@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+
+
+const { title, date } = Astro.props;
+---
+
+<html>
+    <head>
+        <title>{title}</title>
+    </head>
+    <body>
+        <article class="prose lg:prose-xl mx-auto">
+            <h1>{title}</h1>
+            <p>{date}</p>
+            <slot />
+        </article>
+    </body>
+</html>
