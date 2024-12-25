@@ -6,6 +6,7 @@ import getCountByCategory from "../utils/getCountByCategory";
 import getCountByTagName from "../utils/getCountByTagName";
 import ThemeIcon from './ThemeIcon.astro'
 import AsideIcon from "./SidebarIcon.astro";
+import MenuIcon from "./MenuIcon.astro";
 
 const blogs = await getCollectionByName("blog");
 let tagArr = getUniqueTags(blogs);
@@ -13,26 +14,23 @@ let categoryCount = getCountByCategory(blogs);
 let tagCount = getCountByTagName(blogs);
 ---
 
-<header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
-    <div class="flex items-center justify-between container">
+<style>
+  #personal-info {
+    background-color: #111827;
+  }
+</style>
+
+<header class="top-0 w-full bg-skin-fill text-skin-base z-10">
+    <div class="flex items-center justify-between container w-[90%] mx-auto">
         <div class="block xl:hidden">
-            <!-- <MenuIcon></MenuIcon> -->
+            <MenuIcon />
         </div>
         <a class="text-2xl p-4" href="/">{site.title}</a>
         <div class="flex items-center">
-            <div class="hidden xl:block">
-                <div class="flex items-center space-x-5 pr-4">
-                    <!-- {
-                        categories.map(category => (
-                            <HeaderLink href={category.href} icon={category.iconClass} target={category.target ? category.target : '_self'} children={category.children ? category.children : []}>{category.name}</HeaderLink>
-                        ))
-                    } -->
-                </div>
-            </div>
-            <ThemeIcon></ThemeIcon>
+            <ThemeIcon />
             <div class="block xl:hidden">
-                <!-- <AsideIcon></AsideIcon> -->
-            </div>
+              <AsideIcon />
+          </div>
         </div>
     </div>
     <div
@@ -70,7 +68,7 @@ let tagCount = getCountByTagName(blogs);
     <div
         id="personal-info"
         class="hidden break-all overflow-y-auto pb-8"
-        style="height: calc(100vh - 64px)"
+        style="height: calc(100vh - 64px);"
     >
         <img class="avatar my-4 mx-auto" src={site.avatar} alt="avatar" />
         <div class="mb-2 text-center">{site.motto}</div>

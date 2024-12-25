@@ -1,15 +1,16 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import AsideWidget from "../components/AsideWidget.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<BaseHead />
-
-	<body class="bg-skin-secondary relative">
+	<body class="bg-skin-secondary relative scroll-smooth">
 		<Header />
 		<main
-			class="container p-4 pt-20 cursor-default text-skin-base pb-32 min-h-full relative"
+			class="container p-4 pt-8 cursor-default text-skin-base pb-32 w-[90%] mx-auto relative"
 			id="app"
 		>
 			<div class="grid grid-cols-4 gap-8">
@@ -18,12 +19,11 @@ import Header from "../components/Header.astro";
 				</div>
 				<div>
 					<div class="hidden xl:block space-y-6">
-						<!-- <Profile />
-						<BlogAside /> -->
+						<AsideWidget />
 					</div>
 				</div>
 			</div>
-			<!-- <Footer /> -->
+			<Footer />
 		</main>
 	</body>
 </html>
