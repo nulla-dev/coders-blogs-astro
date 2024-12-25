@@ -11,3 +11,8 @@ export const site = {
     postPageSize: 10,
     feedPageSize: 20,
 }
+
+export const config = {
+    lang: 'en',
+    codeFoldingStartLines: 16 , // Need to re-run the project to take effect
+  }
