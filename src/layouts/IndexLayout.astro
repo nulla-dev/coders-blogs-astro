@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+---
+
+<html lang="en">
+	<BaseHead />
+
+	<body class="bg-skin-secondary relative">
+		<Header />
+		<main
+			class="container p-4 pt-20 cursor-default text-skin-base pb-32 min-h-full relative"
+			id="app"
+		>
+			<div class="grid grid-cols-4 gap-8">
+				<div class="col-span-4 xl:col-span-3 space-y-6">
+					<slot />
+				</div>
+				<div>
+					<div class="hidden xl:block space-y-6">
+						<!-- <Profile />
+						<BlogAside /> -->
+					</div>
+				</div>
+			</div>
+			<!-- <Footer /> -->
+		</main>
+	</body>
+</html>
