@@ -5,5 +5,13 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
     site: 'https://numan-dev.web.app/',
-    integrations: [expressiveCode(), mdx(), tailwind()],
+    integrations: [tailwind(), expressiveCode({
+        // plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
+        themes: ["github-dark", "github-light"],
+        styleOverrides: {
+            codeFontFamily: "jetbrains-mono",
+            uiFontFamily: "jetbrains-mono",
+        },
+        themeCssSelector: (theme) => `[data-theme="${theme.type}"]`
+    }), mdx()],
 });
