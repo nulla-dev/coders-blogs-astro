@@ -1,7 +1,14 @@
 ---
-import "../styles/global.css";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getCollection } from "astro:content";
+import IndexLayout from "../layouts/IndexLayout.astro";
+import BlogCard from "../components/BlogCard.astro";
+const blogs = await getCollection("blog");
 ---
 
-<h1>Hello</h1>
+<IndexLayout>
+    {
+        blogs.map((blog: any) => (
+            <BlogCard blog={blog} />
+        ))
+    }
+</IndexLayout>
