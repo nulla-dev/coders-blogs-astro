@@ -1,5 +1,5 @@
 import _ from 'lodash'
-export const dealLabel = (label) => {
+export const dealLabel = (label: string | string[]) => {
   if (_.isEmpty(label)) {
     return []
   } else if (_.isString(label)) {

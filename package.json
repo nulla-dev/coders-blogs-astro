@@ -21,5 +21,8 @@
     "remixicon": "^4.6.0",
     "tailwindcss": "^3.4.17",
     "tocbot": "^4.32.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.13"
   }
 }
