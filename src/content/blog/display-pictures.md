@@ -2,6 +2,8 @@
 title: Show pictures in blogs
 description: A guide on how to display remote and local images in your blog posts, including customization and layout options.
 date: 2024-12-21
+tags: ["images-markdown-use"]
+category: how-to-use-images
 ---
 
 ### Display remote links

@@ -2,7 +2,8 @@
 title: "A post of Markdown elements"
 description: "This blog post provides a comprehensive overview of various Markdown elements. It includes examples of headings, horizontal rules, emphasis, quotes, blockquotes, references, lists (both ordered and unordered), code blocks with syntax highlighting, tables, and links. The post serves as a useful reference for anyone looking to understand and utilize different Markdown features effectively."
 date: 2024-03-19
-tags: ["test", "markdown"]
+tags: ["markdown-use", "markdown"]
+category: how-to-use-markdown
 ---
 
 ## This is a H2 Heading
