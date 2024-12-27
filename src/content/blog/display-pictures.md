@@ -17,20 +17,20 @@ category: how-to-use-images
 ### Show Local Pictures
 
 ```md
-![](/avatar.png)
+![](/demo-img.webp)
 ```
 
-![](/avatar.png)
+![](/demo-img.webp)
 
 ### Customize Local Images
 
 Use html, set`style="width: 200px;"`
 
 ```html
-<img src="/infinite-spinner.svg" data-src="/avatar.png" style="width:200px;">
+<img src="/infinite-spinner.svg" data-src="/demo-img.webp" style="width:200px;">
 ```
 
-<img src="/infinite-spinner.svg" data-src="/avatar.png" style="width:200px;">
+<img src="/infinite-spinner.svg" data-src="/demo-img.webp" style="width:200px;">
 
 ### One row, two columns.
 
@@ -93,14 +93,14 @@ You can actually display it however you want, you just need to know a little bit
 ```html
 <div class="image-cols-2">
   <img src="/infinite-spinner.svg" data-src="https://picsum.photos/seed/picsum/200/300">
-  <img class="row-span-2" src="/infinite-spinner.svg" data-src="https://share.cirry.cn/images/astro-yi/pexels-jeffer-berrire-9027257.jpg">
+  <img class="row-span-2" src="/infinite-spinner.svg" data-src="https://picsum.photos/300/300.webp">
   <img src="/infinite-spinner.svg" data-src="https://picsum.photos/200/300">
 </div>
 ```
 
 <div class="image-cols-2">
 <img src="/infinite-spinner.svg" class="object-fill" data-src="https://picsum.photos/seed/picsum/200/300">
-<img class="row-span-2 object-fill" src="/infinite-spinner.svg" data-src="https://share.cirry.cn/images/astro-yi/pexels-photo-8907866.jpeg">
+<img class="row-span-2 object-fill" src="/infinite-spinner.svg" data-src="https://picsum.photos/200/200.jpg">
 <img src="/infinite-spinner.svg" class="object-fill" data-src="https://picsum.photos/200">
 </div>
 
