@@ -4,7 +4,7 @@ import expressiveCode from 'astro-expressive-code';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-    site: 'https://numan-dev.web.app/',
+    site: 'https://coders-blogs.web.app/',
     integrations: [tailwind(), expressiveCode({
         // plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
         themes: ["github-dark", "github-light"],
