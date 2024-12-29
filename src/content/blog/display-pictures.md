@@ -17,20 +17,20 @@ category: how-to-use-images
 ### Show Local Pictures
 
 ```md
-![](/demo-img.webp)
+![](/cb-books.png)
 ```
 
-![](/demo-img.webp)
+![](/cb-books.png)
 
 ### Customize Local Images
 
 Use html, set`style="width: 200px;"`
 
 ```html
-<img src="/infinite-spinner.svg" data-src="/demo-img.webp" style="width:200px;">
+<img src="/infinite-spinner.svg" data-src="/cb-books.png" style="width:200px;">
 ```
 
-<img src="/infinite-spinner.svg" data-src="/demo-img.webp" style="width:200px;">
+<img src="/infinite-spinner.svg" data-src="/cb-books.png" style="width:200px;">
 
 ### One row, two columns.
 

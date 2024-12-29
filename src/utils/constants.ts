@@ -1,11 +1,11 @@
 export const site = {
-    title: 'Coders Blogs', // required
+    title: '<CodersBlogs />', // required
     favicon: '/favicon.svg', // required
-    description: 'Coding Blogs on React, Vue, Angular, Node, Python, Java, C++, C#, Go, Rust, Webpack, Docker, Kubernetes, AWS, GCP, Azure, etc.', // required
+    description: 'Coding Blogs on Astro, React, Vue, Angular, Node, Python, Java, C++, C#, Go, Rust, Webpack, Docker, Kubernetes, AWS, GCP, Azure, etc.', // required
     author: "N.Dev", // required
     avatar: '/avatar.png', // required
     motto: 'My Code is more cleaner than my room.',
-    url: 'https://numan-dev.web.app/',
+    url: 'https://coders-blogs.web.app/',
     recentBlogSize: 25,
     archivePageSize: 25,
     postPageSize: 10,
@@ -14,5 +14,5 @@ export const site = {
 
 export const config = {
     lang: 'en',
-    codeFoldingStartLines: 16 , // Need to re-run the project to take effect
-  }
+    codeFoldingStartLines: 16,
+}
