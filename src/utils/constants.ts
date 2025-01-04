@@ -3,7 +3,7 @@ export const site = {
     favicon: '/favicon.svg', // required
     description: 'Coding Blogs on Astro, React, Vue, Angular, Node, Python, Java, C++, C#, Go, Rust, Webpack, Docker, Kubernetes, AWS, GCP, Azure, etc.', // required
     author: "N.Dev", // required
-    avatar: '/avatar.png', // required
+    avatar: '/cb-laptop.png', // required
     motto: 'My Code is more cleaner than my room.',
     url: 'https://coders-blogs.web.app/',
     recentBlogSize: 25,
