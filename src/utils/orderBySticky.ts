@@ -1,12 +1,12 @@
 import _ from 'lodash'
 import dayjs from 'dayjs'
 
-export const orderBySticky = (posts) => {
-  let handlePosts = posts.map(post => {
-    post.sticky = post.data.sticky ? post.data.sticky : 0
-    post.dateTimestamp = dayjs(post.data.date).valueOf()
+export const orderBySticky = (blogs: any) => {
+  let modifiedBlogs = blogs.map((blog: any) => {
+    blog.sticky = blog.data.sticky ? blog.data.sticky : 0
+    blog.dateTimestamp = dayjs(blog.data.date).valueOf()
 
-    return post
+    return blog;
   })
-  return _.orderBy(handlePosts, ['sticky', 'dateTimestamp'], ['desc', 'desc'])
+  return _.orderBy(modifiedBlogs, ['sticky', 'dateTimestamp'], ['desc', 'desc'])
 }
