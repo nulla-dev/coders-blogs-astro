@@ -1,7 +1,7 @@
 ---
 import { site } from "../utils/constants";
 import { getCollectionByName } from "../utils/getCollectionByName";
-import getUniqueTags from "../utils/getUniqueTags";
+import getAllTags from "../utils/getAllTags";
 import getCountByCategory from "../utils/getCountByCategory";
 import getCountByTagName from "../utils/getCountByTagName";
 import ThemeIcon from './ThemeIcon.astro'
@@ -9,7 +9,7 @@ import AsideIcon from "./SidebarIcon.astro";
 import MenuIcon from "./MenuIcon.astro";
 
 const blogs = await getCollectionByName("blog");
-let tagArr = getUniqueTags(blogs);
+let tagArr = getAllTags(blogs);
 let categoryCount = getCountByCategory(blogs);
 let tagCount = getCountByTagName(blogs);
 ---
