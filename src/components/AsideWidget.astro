@@ -1,12 +1,12 @@
 ---
-// import Comment from './CommentAside.astro'
 import { getCollectionByName } from "../utils/getCollectionByName";
-import getUniqueTags from "../utils/getUniqueTags";
+import getAllTags from "../utils/getAllTags";
 import getCountByCategory from "../utils/getCountByCategory";
 import { sortPostsByDate } from "../utils/sortPostsByDate";
 import { site } from "../utils/constants";
+
 const blogs = await getCollectionByName("blog");
-let tagArr = getUniqueTags(blogs);
+let tagArr = getAllTags(blogs);
 let categoryCount = getCountByCategory(blogs);
 let sortPosts = await sortPostsByDate(blogs);
 let resultPosts = sortPosts.splice(0, site.recentBlogSize);
@@ -81,4 +81,3 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
     </div>
 </div>
 
-<!-- <Comment></Comment> -->

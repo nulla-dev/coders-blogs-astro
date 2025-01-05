@@ -1,0 +1,23 @@
+---
+import IndexLayout from "../../layouts/IndexLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+import getPostsByTag from "../../utils/getPostsByTag";
+import getAllTags from "../../utils/getAllTags";
+
+export async function getStaticPaths() {
+    const allBlogs = await getCollection("blog");
+    const allTags = getAllTags(allBlogs);
+    return allTags.map((tag: any) => {
+        return { params: { tag }, props: { allBlogs } };
+    });
+}
+
+const { tag } = Astro.params;
+const { allBlogs } = Astro.props;
+const tagBlog = getPostsByTag(allBlogs, tag);
+---
+
+<IndexLayout>
+    {tagBlog.map((blog: any) => <BlogCard blog={blog} />)}
+</IndexLayout>
