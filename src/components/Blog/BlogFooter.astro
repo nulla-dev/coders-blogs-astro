@@ -2,11 +2,11 @@
 import { getCollection } from "astro:content";
 import { orderBySticky } from "../../utils/orderBySticky";
 
-const { entry } = Astro.props;
+const { currentBlogSlug } = Astro.props;
 const blogs = await getCollection("blog");
 const sortedBlogs = await orderBySticky(blogs);
 const currentBlogIndex = sortedBlogs.findIndex(
-    (blog: any) => blog.slug === entry.slug,
+    (blog: any) => blog.slug === currentBlogSlug,
 );
 
 let prevBlog;
