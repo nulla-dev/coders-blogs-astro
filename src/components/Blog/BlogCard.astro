@@ -1,0 +1,72 @@
+---
+import BlogData from "./BlogData.astro";
+const { blog, isBlogPage = false } = Astro.props;
+console.log(blog);
+---
+
+<div
+    class="bg-white dark:bg-gray-800 rounded-lg px-6 pb-6 pt-2 ring-1 ring-slate-900/5 shadow-xl"
+>
+    <div class="mt-1">
+        {
+            isBlogPage ? (
+                <div class="text-2xl font-bold">{blog.data.title}</div>
+            ) : (
+                <a
+                    rel="noopener noreferrer"
+                    href={`/blog/` + blog.slug}
+                    class="text-2xl font-bold hover:underline"
+                >
+                    {blog.data.title}
+                </a>
+            )
+        }
+
+        <BlogData
+            date={blog.data.date}
+            tags={blog.data.tags}
+            blogContent={blog.body}
+        />
+        <div class="divider-horizontal"></div>
+        <p
+            class={`text-slate-500 dark:text-slate-400 mt-2 text-sm tracking-tight ${!isBlogPage} ? 'line-clamp-2' : ''`}
+        >
+            {blog.data.description}
+        </p>
+    </div>
+
+    {
+        !isBlogPage && (
+            <div class="flex items-center justify-between mt-4">
+                <a
+                    rel="noopener noreferrer"
+                    href={`/blog/` + blog.slug}
+                    class="flex text-white bg-blue-500 border-0 py-2 px-5 focus:outline-none hover:bg-blue-600 rounded"
+                >
+                    Read more
+                </a>
+                {/* <div>
+                    {
+                        <a
+                            rel="noopener noreferrer"
+                            href="#"
+                            class="flex items-center"
+                        >
+                            <img
+                                src="https://avatars.githubusercontent.com/u/1164541?v=4"
+                                alt="coders-blog-avatar"
+                                class="object-cover w-10 h-10 mx-4 rounded-full bg-gray-500 dark:bg-gray-500 bg-gray-500 dark:bg-gray-500"
+                            />
+                            <div class="flex flex-col">
+                                <span class="">Numan Dev</span>
+                                <span class="hover:underline text-gray-400 dark:text-gray-600 text-gray-400 dark:text-gray-600">
+                                    numan.dev@gmail.com
+                                </span>
+                            </div>
+                        </a>
+                    }
+                </div> */}
+            </div>
+        )
+    }
+</div>

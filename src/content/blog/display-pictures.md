@@ -4,7 +4,6 @@ description: A guide on how to display remote and local images in your blog post
 date: 2024-12-21
 tags: ["images-markdown-use"]
 category: how-to-use-images
-sticky: 100
 ---
 
 ### Display remote links

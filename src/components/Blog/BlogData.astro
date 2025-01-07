@@ -1,0 +1,45 @@
+---
+import { formatDate } from "../../utils/formatDate";
+
+const {date, tags, blogContent} = Astro.props;
+
+const countWords = (text) => {
+  return text.split(/\s+/).filter(word => word.length > 0).length;
+};
+const wordCount = countWords(blogContent);
+
+const calculateReadingTime = (wordCount) => {
+  const wordsPerMinute = 200;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return minutes;
+};
+const readingTime = calculateReadingTime(wordCount);
+---
+
+<div
+            class="text-slate-500 dark:text-slate-400 mt-2 text-sm tracking-tight flex flex-wrap items-center my-2 space-x-2"
+        >
+            {
+                date && (
+                    <i class="ri-calendar-2-fill"/>
+                    <div class="tag">{formatDate(date)}</div>
+                )
+            }
+
+            {
+                tags && tags.map((tagName) => (
+                  <div class="divider-vertical"/>
+                  <i class="ri-price-tag-3-line"/>
+                  <a href={"/tags/" + tagName} class="text-wrap break-all hover:text-skin-active cursor-pointer">{tagName}</a>
+                ))
+            }
+
+              
+            <div class="divider-vertical"/>
+            <i class="ri-hourglass-fill"/>
+            <div class="tag">
+                <p>{readingTime} minute{readingTime > 1 ? 's' : ''} read</p>
+            </div>
+            <div class="tag"> -&gt; {wordCount} Words</div>
+          
+        </div>
