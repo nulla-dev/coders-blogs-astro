@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import BlogCard from "../../components/Blog/BlogCard.astro";
+import BlogFooter from "../../components/Blog/BlogFooter.astro";
 
 export async function getStaticPaths() {
     const blogEntries = (await getCollection("blog")).filter(
@@ -27,4 +28,5 @@ const { Content } = await entry.render();
     <article class="markdown-body">
         <Content />
     </article>
+    <BlogFooter entry={entry} />
 </BlogLayout>

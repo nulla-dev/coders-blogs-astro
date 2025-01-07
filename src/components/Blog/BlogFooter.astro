@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import { orderBySticky } from "../../utils/orderBySticky";
+
+const { entry } = Astro.props;
+const blogs = await getCollection("blog");
+const sortedBlogs = await orderBySticky(blogs);
+const currentBlogIndex = sortedBlogs.findIndex(
+    (blog: any) => blog.slug === entry.slug,
+);
+
+let prevBlog;
+if (sortedBlogs[currentBlogIndex - 1]) {
+    prevBlog = sortedBlogs[currentBlogIndex - 1];
+}
+
+let nextBlog;
+if (sortedBlogs[currentBlogIndex + 1]) {
+    nextBlog = sortedBlogs[currentBlogIndex + 1];
+}
+---
+
+<div class="divider-horizontal"></div>
+<div class="h-8 text-skin-base">
+    {
+        prevBlog && (
+            <a
+                class="truncate  w-auto max-w-[40%] float-left"
+                href={`/blog/${prevBlog.slug}`}
+                title={prevBlog.data.title}
+            >
+                <i class="ri-arrow-left-s-fill" />
+                {prevBlog.data.title}
+            </a>
+        )
+    }
+
+    {
+        nextBlog && (
+            <a
+                class="truncate w-auto max-w-[40%] float-right"
+                href={`/blog/${nextBlog.slug}`}
+                title={nextBlog.data.title}
+            >
+                {nextBlog.data.title}
+                <i class="ri-arrow-right-s-fill float-right" />
+            </a>
+        )
+    }
+</div>
