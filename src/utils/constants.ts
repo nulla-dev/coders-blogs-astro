@@ -1,9 +1,10 @@
 export const site = {
-    title: '<CodersBlogs />', // required
-    favicon: '/favicon.svg', // required
-    description: 'Coding Blogs on Astro, React, Vue, Angular, Node, Python, Java, C++, C#, Go, Rust, Webpack, Docker, Kubernetes, AWS, GCP, Azure, etc.', // required
-    author: "N.Dev", // required
-    avatar: '/cb-laptop.png', // required
+    title: '<CodersBlogs />',
+    titleSimple: 'CodersBlogs',
+    favicon: '/favicon.svg',
+    description: 'Coding Blogs on Astro, React, Vue, Angular, Node, Python, Java, C++, C#, Go, Rust, Webpack, Docker, Kubernetes, AWS, GCP, Azure, etc.',
+    author: "N.Dev",
+    avatar: '/cb-laptop.png',
     motto: 'My Code is more cleaner than my room.',
     url: 'https://coders-blogs.web.app/',
     recentBlogSize: 25,
